@@ -78,7 +78,6 @@ public class Morse {
 			String morseLetter = splitMorseText[i];
 			if(morseLetter.equalsIgnoreCase(whiteSpaceChar)) {
 				sb.append(" ");
-				
 			}else {
 				sb.append(findKey(morseLetter));
 			}
@@ -104,17 +103,16 @@ public class Morse {
 	
 
 	public static void main(String[] args) {
-		System.out.println(Morse.dataPath);
-		
 		Morse m = new Morse();
-		//m.encode("Hello world\nenter");
-		String result = m.encode("They're trying to save on their phone bill");
-		if(result.equals(null)) {
+		String encodeResult = m.encode("They're trying to save on their phone bill");
+		if(encodeResult.equals(null)) {
 			System.out.println("Invalid input character! Cannot be encoded!");
 		}else {
 			System.out.println("Succesful encoding: ");
-			System.out.println(result);
+			System.out.println(encodeResult);
 		}
+		String decodeResult = m.decode(encodeResult);
+		System.out.println(decodeResult);
 		
 	}
 }
