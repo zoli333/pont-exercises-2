@@ -1,3 +1,4 @@
+/*
 package eu.pontsystems.morse;
 
 import java.io.BufferedReader;
@@ -12,31 +13,14 @@ public class Morse {
 	
 	public String whiteSpaceChar = "/";
 	public String newLineChar = "|";
-	public Map<String, String> table;
-	public static final String dataPath = System.getProperty("user.dir") + "\\data\\morse.txt";
+	
+	
 			
 	public Morse() {
 		table = new HashMap();
 		readEncodingTable();
 	}
 	
-	public void readEncodingTable() {
-		File f = new File(dataPath);
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(f));
-			String line;
-			while ((line = br.readLine()) != null) {
-		    	String[] splitline = line.split("  ");
-		    	table.put(splitline[0], splitline[1]);
-		    }
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 		
 	public String encode(String text) {
 		text = text.replace("\n", newLineChar).replace("\r", newLineChar);
@@ -67,10 +51,7 @@ public class Morse {
 		}
 	}
 	
-	/**
-	 * 
-	 * @param morseText
-	 */
+	
 	public String decode(String morseText) {
 		StringBuilder sb = new StringBuilder();
 		String[] splitMorseText = morseText.split(" ");
@@ -102,17 +83,6 @@ public class Morse {
 	}
 	
 
-	public static void main(String[] args) {
-		Morse m = new Morse();
-		String encodeResult = m.encode("They're trying to save on their phone bill");
-		if(encodeResult.equals(null)) {
-			System.out.println("Invalid input character! Cannot be encoded!");
-		}else {
-			System.out.println("Succesful encoding: ");
-			System.out.println(encodeResult);
-		}
-		String decodeResult = m.decode(encodeResult);
-		System.out.println(decodeResult);
-		
-	}
 }
+
+*/
