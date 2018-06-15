@@ -71,11 +71,11 @@ public class BottlesOfBeer {
 		String numOfBottles = (number > 1) ? String.valueOf(number + " bottles") : String.valueOf(number + " bottle");
 		int decreasedBeer = number - 1;
 		String takeDownBottles = (decreasedBeer == 0) ? String.valueOf("no more bottles") 
-													  : String.valueOf( 
-															  decreasedBeer==1
-																  		? (decreasedBeer + " bottle")
-																  		: (decreasedBeer + " bottles")
-													   );
+						              : String.valueOf( 
+								      decreasedBeer==1
+								      		? (decreasedBeer + " bottle")
+										: (decreasedBeer + " bottles")
+								);
 		String result = "";
 		result = numOfBottles+" of beer on the wall, " + numOfBottles +" of beer.\r\nTake one down and pass it around, "+takeDownBottles+" of beer on the wall.\n\n";
 		if(decreasedBeer==0) {
