@@ -26,10 +26,22 @@ public class BottlesOfBeer {
 	 *  
 	 */
 	
+	
+	/**
+	 * This function gives back the original song
+	 * very useful for testing.
+	 */
 	public static String sing() {
 		return verses(99,0);
 	}
 	
+	/**
+	 * 
+	 * This function uses verse() function as helper (higher method)
+	 * to print out verses from start to end. (start must be greater!
+	 * than end
+	 * 
+	*/
 	public static String verses(int start, int end) {
 		StringBuilder sb = new StringBuilder();
 		int i;
@@ -38,6 +50,15 @@ public class BottlesOfBeer {
 		}
 		return sb.toString();
 	}
+	
+	
+	/**
+	 *  
+	 *  This function is responsible to print out one verse from the song,
+	 * defined by the input number. Also if the decreased beer is 0,
+	 * (so the actual number of beer is 1) then writes it out the last 
+	 * vers from the poet
+	*/
 	
 	public static String verse(int number) {
 
