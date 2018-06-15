@@ -1,33 +1,30 @@
 package eu.pontsystems.morse;
 
+import java.io.IOException;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
-public class Alphabet {
+
+
+public abstract class Alphabet {
 	
-	public static Map<Character, String> Table;
-	public static Character whiteSpaceChar='/';
+	protected static Map<Character, String> table;
+	protected static Character whiteSpaceChar='/';
+	protected static Character newLineChar='|';
 	
-	static {
-		Table = ResourceReader.readEncodingTable();
-		//System.out.println("CALLED");
+	public Alphabet() {}
+
+
+	public String findCode(Character letter) throws IOException  {
+		if(Character.isWhitespace(letter)) return (String.valueOf(whiteSpaceChar));
+		if(letter.equals(newLineChar))return "/";
+		if(!table.containsKey(letter)) throw new IOException("Character not found!!");
+		return table.get(letter);
 	}
-	
-	/***
-	 * 
-	 * @param letter An alphabet character in String 
-	 */
-	public static String findCode(Character letter) {
-		if(Character.isWhitespace(letter)) {
-			return (String.valueOf(whiteSpaceChar+" "));
-		}else if(letter.equals('|')){
-			return "/ ";
-		}else{
-			return Table.get(letter)+" ";
-		}
+
+
+
+
 		
-	}
 	
 	
-
 }
