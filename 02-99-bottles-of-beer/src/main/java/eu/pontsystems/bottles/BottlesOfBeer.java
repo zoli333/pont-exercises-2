@@ -42,7 +42,10 @@ public class BottlesOfBeer {
 	public static String verse(int number) {
 
 		if(number<=0) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("The number of beer/'s on the wall cannot be less then or equal than zero!");
+		}
+		if(number>99) {
+			throw new IllegalArgumentException("The number of beer/'s on the wall cannot greater than 99, unless it is a different song");
 		}
 		String numOfBottles = (number > 1) ? String.valueOf(number + " bottles") : String.valueOf(number + " bottle");
 		int decreasedBeer = number - 1;

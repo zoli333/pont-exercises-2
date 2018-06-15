@@ -114,5 +114,11 @@ public class BottlesTest {
         Assert.assertEquals(expected, actual);
 	}
 	
+	@Test(expected=IllegalArgumentException.class)
+	public void test11() throws ClassNotFoundException {
+		BottlesOfBeer.verse(100);
+	}
+	
+	
 }
 
