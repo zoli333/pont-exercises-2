@@ -26,11 +26,6 @@ public class Translator {
 		return result;
 	}
 	
-	public static void main(String[] args) throws ClassNotFoundException {
-		System.out.println(Translator.encode("hello world",new BrailleAlphabet()));
-		System.out.println(Translator.encode("how to convert a char to a string",new BrailleAlphabet()));
-		
-	}
 }
 
 	
